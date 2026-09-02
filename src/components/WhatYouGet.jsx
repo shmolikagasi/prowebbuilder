@@ -73,7 +73,7 @@ export default function WhatYouGet() {
                   aria-hidden
                   className="pointer-events-none absolute -left-10 -top-10 h-32 w-32 rounded-full bg-gold/0 blur-2xl transition-colors duration-500 group-hover:bg-gold/20"
                 />
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-gold/10 text-gold ring-1 ring-gold/20 transition-colors duration-300 group-hover:bg-gold group-hover:text-ink">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-gold/10 text-gold ring-1 ring-gold/20 transition-colors duration-300 group-hover:bg-gold group-hover:text-white">
                   <f.icon className="h-6 w-6" />
                 </span>
                 <h3 className="mt-5 font-display text-xl font-semibold text-cloud">

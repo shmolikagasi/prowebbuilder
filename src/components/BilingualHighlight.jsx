@@ -41,7 +41,7 @@ export default function BilingualHighlight() {
 
               <a
                 href="#contact"
-                className="group inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 font-bold text-ink transition-all duration-200 hover:scale-[1.03] hover:bg-gold-soft"
+                className="group inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 font-bold text-white transition-all duration-200 hover:scale-[1.03] hover:bg-gold-soft"
               >
                 רוצים אתר באנגלית?
                 <ArrowLeft className="h-5 w-5 transition-transform duration-200 group-hover:-translate-x-1" />

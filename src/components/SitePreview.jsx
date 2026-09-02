@@ -55,7 +55,7 @@ export default function SitePreview() {
       {/* Ambient glow */}
       <div
         aria-hidden
-        className="absolute -inset-6 -z-10 rounded-[2rem] bg-[radial-gradient(ellipse_at_top,rgba(245,166,35,0.28),transparent_65%)] blur-2xl"
+        className="absolute -inset-6 -z-10 rounded-[2rem] bg-[radial-gradient(ellipse_at_top,rgba(29,78,216,0.28),transparent_65%)] blur-2xl"
       />
 
       <motion.div

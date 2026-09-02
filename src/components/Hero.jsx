@@ -24,7 +24,7 @@ export default function Hero() {
       <div aria-hidden className="absolute inset-0 -z-20 bg-grid" />
       <div
         aria-hidden
-        className="absolute inset-x-0 top-0 -z-10 h-[600px] bg-[radial-gradient(60%_60%_at_50%_0%,rgba(245,166,35,0.16),transparent_70%)]"
+        className="absolute inset-x-0 top-0 -z-10 h-[600px] bg-[radial-gradient(60%_60%_at_50%_0%,rgba(29,78,216,0.16),transparent_70%)]"
       />
 
       {/* Floating decorative objects (CSS-animated → respect reduced-motion) */}
@@ -72,7 +72,7 @@ export default function Hero() {
           <motion.div {...anim(3)} className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="#contact"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-base font-bold text-ink transition-all duration-200 hover:scale-[1.02] hover:bg-gold-soft glow-gold"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-base font-bold text-white transition-all duration-200 hover:scale-[1.02] hover:bg-gold-soft glow-gold"
             >
               קבלו דמו חינם
               <ArrowLeft className="h-5 w-5 transition-transform duration-200 group-hover:-translate-x-1" />

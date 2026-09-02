@@ -109,7 +109,7 @@ export default function AccessibilityMenu() {
         aria-expanded={open}
         aria-controls="a11y-panel"
         aria-label="פתיחת תפריט נגישות"
-        className="fixed bottom-5 start-5 z-[60] grid h-14 w-14 place-items-center rounded-full bg-gold text-ink shadow-[0_10px_30px_-6px_rgba(245,166,35,0.6)] transition-transform hover:scale-105 focus-visible:scale-105"
+        className="fixed bottom-5 start-5 z-[60] grid h-14 w-14 place-items-center rounded-full bg-gold text-white shadow-[0_10px_30px_-6px_rgba(29,78,216,0.6)] transition-transform hover:scale-105 focus-visible:scale-105"
       >
         <Accessibility className="h-7 w-7" strokeWidth={2.2} />
       </button>

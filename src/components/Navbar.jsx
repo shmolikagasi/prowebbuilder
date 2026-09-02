@@ -32,7 +32,7 @@ export default function Navbar() {
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
         {/* Logo */}
         <Link to="/" className="group flex items-center gap-2.5">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-gold text-ink shadow-[0_6px_20px_-6px_rgba(245,166,35,0.7)]">
+          <span className="grid h-9 w-9 place-items-center rounded-lg bg-gold text-white shadow-[0_6px_20px_-6px_rgba(29,78,216,0.7)]">
             <Hammer className="h-5 w-5" strokeWidth={2.4} />
           </span>
           <span className="font-display text-lg font-bold tracking-tight text-cloud" dir="ltr">
@@ -56,7 +56,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <a
           href="/#contact"
-          className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-bold text-ink transition-transform duration-200 hover:scale-[1.03] hover:bg-gold-soft md:inline-block"
+          className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-bold text-white transition-transform duration-200 hover:scale-[1.03] hover:bg-gold-soft md:inline-block"
         >
           קבלו דמו חינם
         </a>
@@ -97,7 +97,7 @@ export default function Navbar() {
               <a
                 href="/#contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 rounded-full bg-gold px-5 py-3 text-center text-base font-bold text-ink"
+                className="mt-2 rounded-full bg-gold px-5 py-3 text-center text-base font-bold text-white"
               >
                 קבלו דמו חינם
               </a>

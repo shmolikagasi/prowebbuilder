@@ -65,7 +65,7 @@ export default function ContactCTA() {
     <section id="contact" className="relative py-20 sm:py-28 scroll-mt-20">
       <div
         aria-hidden
-        className="absolute inset-x-0 bottom-0 -z-10 h-[500px] bg-[radial-gradient(60%_60%_at_50%_100%,rgba(245,166,35,0.14),transparent_70%)]"
+        className="absolute inset-x-0 bottom-0 -z-10 h-[500px] bg-[radial-gradient(60%_60%_at_50%_100%,rgba(29,78,216,0.14),transparent_70%)]"
       />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="overflow-hidden rounded-3xl border border-line bg-ink-2">
@@ -131,7 +131,7 @@ export default function ContactCTA() {
                     href={waUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 font-bold text-ink transition-transform hover:scale-[1.03]"
+                    className="mt-6 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 font-bold text-white transition-transform hover:scale-[1.03]"
                   >
                     <WhatsAppIcon className="h-5 w-5" /> לא נפתח? פתחו וואטסאפ
                   </a>
@@ -220,7 +220,7 @@ export default function ContactCTA() {
 
                   <button
                     type="submit"
-                    className="mt-1 inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-6 py-3.5 text-base font-bold text-ink transition-all duration-200 hover:scale-[1.01] hover:bg-gold-soft glow-gold"
+                    className="mt-1 inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-6 py-3.5 text-base font-bold text-white transition-all duration-200 hover:scale-[1.01] hover:bg-gold-soft glow-gold"
                   >
                     <WhatsAppIcon className="h-5 w-5" />
                     רוצה דמו חינם

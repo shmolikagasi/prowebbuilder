@@ -11,7 +11,7 @@ export default function LegalPage({ title, subtitle, updated, children }) {
         <header className="relative overflow-hidden border-b border-line pt-32 pb-14 sm:pt-40">
           <div
             aria-hidden
-            className="absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(60%_60%_at_50%_0%,rgba(245,166,35,0.12),transparent_70%)]"
+            className="absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(60%_60%_at_50%_0%,rgba(29,78,216,0.12),transparent_70%)]"
           />
           <div className="mx-auto max-w-3xl px-5 sm:px-8">
             <Link

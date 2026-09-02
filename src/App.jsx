@@ -11,7 +11,7 @@ export default function App() {
       {/* Skip link — first focusable element for keyboard users */}
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:z-[100] focus:top-4 focus:start-4 focus:rounded-lg focus:bg-gold focus:px-4 focus:py-2 focus:font-bold focus:text-ink"
+        className="sr-only focus:not-sr-only focus:z-[100] focus:top-4 focus:start-4 focus:rounded-lg focus:bg-gold focus:px-4 focus:py-2 focus:font-bold focus:text-white"
       >
         דלג לתוכן הראשי
       </a>

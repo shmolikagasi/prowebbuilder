@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8">
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
           <Link to="/" className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-gold text-ink">
+            <span className="grid h-9 w-9 place-items-center rounded-lg bg-gold text-white">
               <Hammer className="h-5 w-5" strokeWidth={2.4} />
             </span>
             <span className="font-display text-lg font-bold tracking-tight text-cloud" dir="ltr">

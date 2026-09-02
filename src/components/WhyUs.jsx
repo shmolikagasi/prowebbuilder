@@ -40,7 +40,7 @@ export default function WhyUs() {
     <section id="why-us" className="relative py-20 sm:py-28 scroll-mt-20">
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(245,166,35,0.06),transparent_70%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(29,78,216,0.06),transparent_70%)]"
       />
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
