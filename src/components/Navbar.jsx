@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Hammer } from "lucide-react";
 import { NAV_LINKS } from "../lib/site";
 import { useCopy } from "../lib/i18n";
-import LanguageToggle from "./LanguageToggle";
 
 const COPY = {
   en: { cta: "Get a Free Demo", open: "Open menu", close: "Close menu", nav: "Main" },
@@ -72,8 +71,6 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <LanguageToggle />
-
           {/* Desktop CTA */}
           <a
             href="/#contact"

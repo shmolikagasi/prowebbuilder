@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Hammer } from "lucide-react";
 import InstagramIcon from "./InstagramIcon";
+import LanguageToggle from "./LanguageToggle";
 import { SITE, NAV_LINKS, LEGAL_LINKS } from "../lib/site";
 import { useCopy } from "../lib/i18n";
 
@@ -58,6 +59,7 @@ export default function Footer() {
                 {l.label}
               </Link>
             ))}
+            <LanguageToggle />
           </nav>
           <p>
             © {new Date().getFullYear()} {SITE.brand} — {c.tagline}
