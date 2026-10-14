@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { useCopy } from "../lib/i18n";
+
+const COPY = {
+  en: { back: "Back to home", updated: "Last updated:" },
+  he: { back: "חזרה לעמוד הבית", updated: "עודכן לאחרונה:" },
+};
 
 export default function LegalPage({ title, subtitle, updated, children }) {
+  const c = useCopy(COPY);
+
   return (
     <div className="min-h-dvh bg-ink text-cloud">
       <Navbar />
@@ -16,9 +24,9 @@ export default function LegalPage({ title, subtitle, updated, children }) {
           <div className="mx-auto max-w-3xl px-5 sm:px-8">
             <Link
               to="/"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-ash transition-colors hover:text-gold"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-ash transition-colors hover:text-accent"
             >
-              <ArrowRight className="h-4 w-4" /> חזרה לעמוד הבית
+              <ArrowLeft className="h-4 w-4 rtl:rotate-180" aria-hidden /> {c.back}
             </Link>
             <h1 className="mt-5 font-display text-3xl font-bold tracking-tight text-cloud sm:text-4xl">
               {title}
@@ -26,8 +34,7 @@ export default function LegalPage({ title, subtitle, updated, children }) {
             {subtitle && <p className="mt-3 text-lg text-ash">{subtitle}</p>}
             {updated && (
               <p className="mt-4 text-sm text-ash">
-                עודכן לאחרונה:{" "}
-                <span className="font-semibold text-cloud">{updated}</span>
+                {c.updated} <span className="font-semibold text-cloud">{updated}</span>
               </p>
             )}
           </div>

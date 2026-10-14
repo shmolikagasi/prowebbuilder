@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------- *
- * prowebbuilder — design tokens (Hebrew / RTL)
+ * prowebbuilder — design tokens (English LTR default, Hebrew RTL toggle)
  * Deep-black premium theme with deep-blue accent.
  * ---------------------------------------------------------------- */
 @theme {
@@ -19,10 +19,14 @@
   --color-cloud: #f5f5f4;      /* primary text */
   --color-ash: #a0a0a8;        /* muted body */
 
-  /* Deep-blue accent (was gold) */
-  --color-gold: #1d4ed8;       /* primary accent / deep blue */
+  /* Deep-blue accent (was gold).
+     Contrast (WCAG 2.1 AA): white text on gold = 6.7:1, on gold-soft = 5.2:1.
+     Deep blue on the dark background is only ~2.4:1, so any accent-colored
+     TEXT, ICON or FOCUS RING uses --color-accent (≈7.6:1 on ink) instead. */
+  --color-gold: #1d4ed8;       /* primary accent fill / deep blue */
   --color-gold-2: #1e3a8a;     /* deep navy */
-  --color-gold-soft: #3b82f6;  /* highlight / brighter blue */
+  --color-gold-soft: #2563eb;  /* hover fill */
+  --color-accent: #60a5fa;     /* accent text / icons on dark */
 
   --color-danger: #ef4444;
   --color-good: #34d399;
@@ -48,9 +52,9 @@
     color: #ffffff;
   }
 
-  /* Accessible focus ring */
+  /* Accessible focus ring (≥3:1 against the dark background) */
   :where(a, button, input, textarea, select):focus-visible {
-    outline: 3px solid var(--color-gold);
+    outline: 3px solid var(--color-accent);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -68,7 +72,8 @@
 @layer utilities {
   /* Gold gradient text */
   .text-gold-gradient {
-    background: linear-gradient(120deg, var(--color-gold-soft), var(--color-gold) 45%, var(--color-gold-2));
+    /* Light blues only, so the gradient text stays readable on black. */
+    background: linear-gradient(120deg, #93c5fd, var(--color-accent) 45%, #3b82f6);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -122,12 +127,14 @@ html.a11y-contrast {
   --color-line: #ffffff;
   --color-cloud: #ffffff;
   --color-ash: #ffffff;
-  --color-gold: #7cb0ff;       /* bright blue — keeps high contrast on black */
-  --color-gold-soft: #a9ccff;
+  --color-gold: #1d4ed8;       /* fills keep white text readable */
+  --color-gold-soft: #1e40af;
+  --color-accent: #a9ccff;     /* bright blue — keeps high contrast on black */
 }
 html.a11y-contrast .text-gold-gradient {
-  color: var(--color-gold);
-  -webkit-text-fill-color: var(--color-gold);
+  background: none;
+  color: var(--color-accent);
+  -webkit-text-fill-color: var(--color-accent);
 }
 
 html.a11y-links a {
@@ -179,10 +186,10 @@ html.a11y-no-motion *::after {
   margin-bottom: 1rem;
 }
 .prose-legal li { margin-bottom: 0.4rem; }
-.prose-legal a { color: var(--color-gold); text-decoration: underline; }
+.prose-legal a { color: var(--color-accent); text-decoration: underline; }
 .prose-legal strong { color: var(--color-cloud); font-weight: 600; }
 .prose-legal .placeholder {
-  color: var(--color-gold);
+  color: var(--color-accent);
   background: rgba(29, 78, 216, 0.1);
   padding: 0 0.3rem;
   border-radius: 4px;
@@ -226,5 +233,6 @@ html.a11y-no-motion *::after {
 .animate-pulse-glow { animation: pwb-pulse-glow 5.5s ease-in-out infinite; }
 .animate-marquee { animation: pwb-marquee 30s linear infinite; }
 
-/* Pause the marquee on hover for readability */
-.marquee-track:hover { animation-play-state: paused; }
+/* Pause the marquee on hover / keyboard focus for readability */
+.marquee-track:hover,
+.marquee-track:focus-within { animation-play-state: paused; }

@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowLeft, ShieldCheck, Zap, Star, Globe, MapPin } from "lucide-react";
+import { ArrowRight, ShieldCheck, Zap, Star, Globe, MapPin } from "lucide-react";
 import SitePreview from "./SitePreview";
+import { useCopy } from "../lib/i18n";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
@@ -11,8 +12,40 @@ const fadeUp = {
   }),
 };
 
+const COPY = {
+  en: {
+    badge: "Built just for your business · English & Hebrew",
+    h1a: "Websites that turn",
+    h1b: "visitors into customers —",
+    h1c: "for every business",
+    leadA: "Get a free, custom demo of your new website",
+    leadB: "before you pay a dime.",
+    leadC: "No risk, no commitment.",
+    cta: "Get a Free Demo",
+    secondary: "What You Get",
+    trust: ["No upfront payment", "English & Hebrew websites", "Serving clients across the US", "Demo in days"],
+    chip: "English + עברית",
+  },
+  he: {
+    badge: "נבנה במיוחד לעסק שלכם · עברית ואנגלית",
+    h1a: "אתרי אינטרנט שממירים",
+    h1b: "גולשים ללקוחות —",
+    h1c: "לכל עסק",
+    leadA: "קבלו דמו מותאם אישית של האתר החדש שלכם",
+    leadB: "עוד לפני שתשלמו שקל.",
+    leadC: "בעברית או באנגלית — בלי סיכון, בלי התחייבות.",
+    cta: "קבלו דמו חינם",
+    secondary: "מה תקבלו",
+    trust: ["ללא תשלום מראש", "אתרים בעברית ובאנגלית", "עובדים גם עם לקוחות בארה״ב", "דמו תוך ימים"],
+    chip: "עברית + English",
+  },
+};
+
+const TRUST_ICONS = [ShieldCheck, Globe, MapPin, Zap];
+
 export default function Hero() {
   const reduce = useReducedMotion();
+  const c = useCopy(COPY);
   const anim = (i) =>
     reduce
       ? {}
@@ -38,35 +71,35 @@ export default function Hero() {
         <div className="animate-float-slow absolute right-[28%] top-[16%] h-2 w-2 rounded-full bg-gold/50" />
       </div>
 
-      <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr]">
         {/* Copy */}
         <div>
           <motion.div
             {...anim(0)}
             className="inline-flex items-center gap-2 rounded-full border border-line bg-ink-2 px-3.5 py-1.5 text-xs font-medium text-ash"
           >
-            <span className="flex items-center gap-1 text-gold">
-              <Star className="h-3.5 w-3.5 fill-gold" />
+            <span className="flex items-center gap-1 text-accent" aria-hidden>
+              <Star className="h-3.5 w-3.5 fill-accent" />
             </span>
-            נבנה במיוחד לעסק שלכם · עברית ואנגלית
+            {c.badge}
           </motion.div>
 
           <motion.h1
             {...anim(1)}
             className="mt-5 font-display text-4xl font-bold leading-[1.15] tracking-tight text-cloud sm:text-5xl lg:text-6xl"
           >
-            אתרי אינטרנט שממירים
-            <br className="hidden sm:block" /> גולשים ללקוחות —{" "}
-            <span className="text-gold-gradient">לכל עסק</span>
+            {c.h1a}
+            <br className="hidden sm:block" /> {c.h1b}{" "}
+            <span className="text-gold-gradient">{c.h1c}</span>
           </motion.h1>
 
           <motion.p
             {...anim(2)}
             className="mt-6 max-w-xl text-lg leading-relaxed text-ash"
           >
-            קבלו דמו מותאם אישית של האתר החדש שלכם{" "}
-            <span className="font-semibold text-cloud">עוד לפני שתשלמו שקל.</span>{" "}
-            בעברית או באנגלית — בלי סיכון, בלי התחייבות.
+            {c.leadA}{" "}
+            <span className="font-semibold text-cloud">{c.leadB}</span>{" "}
+            {c.leadC}
           </motion.p>
 
           <motion.div {...anim(3)} className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -74,43 +107,45 @@ export default function Hero() {
               href="#contact"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-base font-bold text-white transition-all duration-200 hover:scale-[1.02] hover:bg-gold-soft glow-gold"
             >
-              קבלו דמו חינם
-              <ArrowLeft className="h-5 w-5 transition-transform duration-200 group-hover:-translate-x-1" />
+              {c.cta}
+              <ArrowRight
+                aria-hidden
+                className="h-5 w-5 transition-transform duration-200 rtl:rotate-180 group-hover:translate-x-1 rtl:group-hover:-translate-x-1"
+              />
             </a>
             <a
               href="#what-you-get"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-line bg-ink-2 px-7 py-3.5 text-base font-semibold text-cloud transition-colors duration-200 hover:border-gold/50"
             >
-              מה תקבלו
+              {c.secondary}
             </a>
           </motion.div>
 
           {/* Trust row */}
-          <motion.div
+          <motion.ul
             {...anim(4)}
             className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-ash"
           >
-            <span className="inline-flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-gold" /> ללא תשלום מראש
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <Globe className="h-4 w-4 text-gold" /> אתרים בעברית ובאנגלית
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-gold" /> עובדים גם עם לקוחות בארה״ב
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <Zap className="h-4 w-4 text-gold" /> דמו תוך ימים
-            </span>
-          </motion.div>
+            {c.trust.map((t, i) => {
+              const Icon = TRUST_ICONS[i];
+              return (
+                <li key={t} className="inline-flex items-center gap-2">
+                  <Icon className="h-4 w-4 text-accent" aria-hidden /> {t}
+                </li>
+              );
+            })}
+          </motion.ul>
         </div>
 
         {/* Visual */}
         <div className="relative">
           {/* Floating chip — bilingual */}
-          <div className="animate-float-slow absolute -top-4 -left-2 z-10 hidden items-center gap-1.5 rounded-full border border-line bg-ink-2/90 px-3 py-1.5 text-[11px] font-semibold text-cloud shadow-xl backdrop-blur-sm sm:inline-flex">
-            <Globe className="h-3.5 w-3.5 text-gold" />
-            עברית + English
+          <div
+            aria-hidden
+            className="animate-float-slow absolute -top-4 -end-2 z-10 hidden items-center gap-1.5 rounded-full border border-line bg-ink-2/90 px-3 py-1.5 text-[11px] font-semibold text-cloud shadow-xl backdrop-blur-sm sm:inline-flex"
+          >
+            <Globe className="h-3.5 w-3.5 text-accent" />
+            {c.chip}
           </div>
 
           <div className="animate-float-slow">
